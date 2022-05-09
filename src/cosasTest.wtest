@@ -1,2 +1,86 @@
 import camion.*
 import cosas.*
+
+describe "test de paquete de ladrillos"{
+	
+	test "peligrosidad de los paquetes de ladrillos"{
+		assert.equals(2,paqueteLadrillos.peligrosidad())
+	}
+	
+	test "precio del paquete de ladrillos con 1 ladrillo y luego con 10"{
+		paqueteLadrillos.cantidadLadrillos(1)
+		assert.equals(2,paqueteLadrillos.peso())
+		paqueteLadrillos.cantidadLadrillos(10)
+		assert.equals(20,paqueteLadrillos.peso())
+	}
+}
+
+describe "test de bateria antiaérea"{
+	
+	test "peso cargarda"{
+		bateriaAntiaerea.estaCargada(true)
+		assert.equals(300,bateriaAntiaerea.peso())
+	}
+	
+	test "peso sin cargar"{
+		bateriaAntiaerea.estaCargada(false)
+		assert.equals(200,bateriaAntiaerea.peso())
+	}
+	
+	test "peligrosidad sin cargar "{
+		bateriaAntiaerea.estaCargada(false)
+		assert.equals(0,bateriaAntiaerea.peligrosidad())
+	}
+	
+	test "peligrosidad cargada"{
+		bateriaAntiaerea.estaCargada(true)
+		assert.equals(100,bateriaAntiaerea.peligrosidad())
+	}
+}
+
+describe "test de contenedor portuario"{
+	
+	test "peso del contenedor sin ninguna cosa cargada"{
+		assert.equals(100,contenedor.peso())
+	}
+	
+	test "peso del contenedor con el knight rider cargado"{
+		contenedor.agregarElemento(knightRider)
+		assert.equals(600,contenedor.peso())
+	}
+	
+	test "peligrosidad sin nada cargado"{
+		assert.equals(0,contenedor.peligrosidad())
+	}
+	
+	test "peligrosidad con knight rider cargado"{
+		contenedor.agregarElemento(knightRider)
+		assert.equals(10,contenedor.peligrosidad())
+	}
+	
+	test "peligrosidad con arena cargado"{
+		contenedor.agregarElemento(arena)
+		assert.equals(1,contenedor.peligrosidad())
+	}
+	
+	test "peso del contenedor con 10 de  arena cargado"{
+		contenedor.agregarElemento(arena)
+		arena.peso(10)
+		assert.equals(110,contenedor.peso())
+	}
+}
+
+describe " test de embalaje seguridad"{
+	
+	test "peligrosidad con eleentos radioactivos "{
+		embalajeSeguridad.objetoEnvuelto(residuosRadioactivos)
+		assert.equals(100,embalajeSeguridad.peligrosidad())
+	}
+	
+	test "peso del embalaje con 30  de elemento radioactivo"{
+		embalajeSeguridad.objetoEnvuelto(residuosRadioactivos)
+		residuosRadioactivos.peso(30)
+		assert.equals(30,embalajeSeguridad.peso())
+	}
+}
+
