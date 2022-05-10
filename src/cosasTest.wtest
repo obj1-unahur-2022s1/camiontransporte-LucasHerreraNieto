@@ -18,22 +18,22 @@ describe "test de paquete de ladrillos"{
 describe "test de bateria antiaérea"{
 	
 	test "peso cargarda"{
-		bateriaAntiaerea.estaCargada(true)
+		bateriaAntiaerea.cargar()
 		assert.equals(300,bateriaAntiaerea.peso())
 	}
 	
 	test "peso sin cargar"{
-		bateriaAntiaerea.estaCargada(false)
+		bateriaAntiaerea.cargar()
 		assert.equals(200,bateriaAntiaerea.peso())
 	}
 	
 	test "peligrosidad sin cargar "{
-		bateriaAntiaerea.estaCargada(false)
+		bateriaAntiaerea.cargar()
 		assert.equals(0,bateriaAntiaerea.peligrosidad())
 	}
 	
 	test "peligrosidad cargada"{
-		bateriaAntiaerea.estaCargada(true)
+		bateriaAntiaerea.cargar()
 		assert.equals(100,bateriaAntiaerea.peligrosidad())
 	}
 }

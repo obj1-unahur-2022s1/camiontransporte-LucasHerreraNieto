@@ -1,0 +1,47 @@
+import camion2.*
+import cosas2.*
+
+describe "tests de consecuenias de carga"{
+	
+	test"consecuencia de cargar bumblebee" {
+		camion.cargar(bumblebee)
+		assert.that(bumblebee.esRobot())
+	}
+	
+	test "consecuenci de carga paqueteLadrillos "{
+		camion.cargar(paqueteLadrillos)
+		assert.equals(12,paqueteLadrillos.cantidadLadrillos())
+	}
+	
+	test "consecuencia de carga arena"{
+		camion.cargar(arena)
+		assert.equals(20,arena.peso())
+	}
+	
+	test " consecuencia de carga bateriaAntiaerea"{
+		camion.cargar(bateriaAntiaerea)
+		assert.that(bateriaAntiaerea.estaCargada())
+	}
+	
+	test "test de cargar residuos radiactivos "{
+		camion.cargar(residuosRadioactivos)
+		assert.equals(15,residuosRadioactivos.peso())
+	}
+	
+	test "test de carga contenedor"{
+		contenedor.agregarElemento(arena)
+		camion.cargar(contenedor)
+		assert.equals(20,arena.peso())
+	}
+}
+
+describe "test de total de bultos"{
+	test "total de bultos"{
+		camion.cargar(knightRider)
+		camion.cargar(bumblebee)
+		camion.cargar(arena)
+		paqueteLadrillos.cantidadLadrillos(400)
+		camion.cargar(paqueteLadrillos)
+		assert.equals(7,camion.totalDeBultos())
+	}	
+}
