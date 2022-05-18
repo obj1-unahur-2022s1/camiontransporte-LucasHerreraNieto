@@ -1,3 +1,6 @@
+/*
+ * Muy bien
+ */
 import camion.*
 import cosas.*
 
@@ -24,7 +27,7 @@ describe "test de bateria antiaérea"{
 	
 	test "peso sin cargar"{
 		bateriaAntiaerea.cargar()
-		assert.equals(200,bateriaAntiaerea.peso())
+		assert.equals(300,bateriaAntiaerea.peso())
 	}
 	
 	test "peligrosidad sin cargar "{

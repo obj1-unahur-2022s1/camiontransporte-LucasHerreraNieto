@@ -1,3 +1,6 @@
+/*
+ * muy bien 
+ */
 import cosas2.*
 
 object camion {
@@ -18,6 +21,7 @@ object camion {
 	method pesoTotal() = self.pesoDeLaCarga() + pesoTara
 	method excedidoDePeso() = self.pesoTotal() > 2500
 	method objetosQueSuperanPeligrosidad(nivel) = cosasCargadas.filter({c=>c.peligrosidad() > nivel})
+	/* Muy bien que te diste cuenta de reutilizar  */
 	method objetosMasPeligrososQue(cosa) = self.objetosQueSuperanPeligrosidad(cosa.peligrosidad())
 	method puedeCircularEnRuta(nivelMaximoPeligrosidad) = !self.excedidoDePeso() and !self.superaElNivelDePeligrosidad(nivelMaximoPeligrosidad)
 	method tieneAlgoQuePesaEntre(min, max) = cosasCargadas.any({c=>c.peso().between(min,max)})

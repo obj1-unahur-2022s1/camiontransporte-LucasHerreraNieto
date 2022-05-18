@@ -1,3 +1,6 @@
+/*
+ * muy bien
+ */
 object knightRider {
 
 	method peso() =  500
@@ -36,6 +39,7 @@ object arena {
 }
 
 object bateriaAntiaerea {
+	/* No quedo ningun método para descargar los misiles :-( */
 	var estaCargada  = false
 	
 	method estaCargada() = estaCargada
